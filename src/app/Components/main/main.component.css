@@ -1,0 +1,55 @@
+.main {
+    display: grid;
+    height: 100vh;
+}
+
+.main-container {
+    place-self: center;
+    display: flex;
+    min-width: 80%;
+    height: 100%;
+    background-color: var(--dark);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+app-lists,
+app-tasks {
+    height: auto;
+    margin: 8px;
+    padding: 8px;
+    background-color: var(--gray);
+    border-radius: 10px;
+}
+
+app-lists {
+    width: 30%;
+}
+
+app-tasks {
+    width: 70%;
+}
+
+@media (max-width: 870px) {
+    .main-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 670px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    app-lists {
+        width: 100%;
+    }
+
+    app-tasks {
+        width: 100%;
+    }
+}
+
