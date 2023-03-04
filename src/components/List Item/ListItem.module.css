@@ -1,0 +1,9 @@
+.li {
+    display: inline-flex;
+    font-size: 1.25rem;
+    margin: 8px;
+    color: white;
+    background-color: #543280;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
