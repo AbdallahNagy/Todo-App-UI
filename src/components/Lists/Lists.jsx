@@ -9,7 +9,7 @@ function Lists() {
     return (
         <>
             <div className={classes.container}>
-                {lists.map(list => <ListItem key={list._id} title={list.title} />)}
+                {lists.map(list => <ListItem key={list._id} listId={list._id} title={list.title} />)}
             </div>
         </>
     );
@@ -24,6 +24,5 @@ export async function loader() {
         }
     }));
 
-    console.log(res.data);
     return res.data;
 }
