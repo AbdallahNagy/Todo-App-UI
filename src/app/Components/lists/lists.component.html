@@ -6,11 +6,17 @@
     </div>
     <div class="list-groups-body">
         <ul *ngFor="let l of lists">
-            <li (click)="showTasks(l._id)">{{l.title}}</li>
+            <li class="list-item" (click)="showTasks(l._id)">
+                <span>{{l.title}}</span>
+                <div class="icons">
+                    <a href="#"><i class="fa-solid fa-trash"></i></a>
+                    <a href="#"><i class="fa-solid fa-wrench"></i></a>
+                </div>
+            </li>
         </ul>
     </div>
     
     <div class="new-list-div">
-        <button type="button" class="btn new-list-btn">New List</button>
+        <button type="button" class="btn new-list-btn" routerLink="/home/new-list">New List</button>
     </div>
 </div>

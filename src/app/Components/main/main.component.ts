@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  tasks:any
 
   constructor( private router:Router) {
     console.log('main');    
@@ -15,7 +16,6 @@ export class MainComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  tasks:any
 
   getTasks(tasks:any) {
     this.tasks = tasks

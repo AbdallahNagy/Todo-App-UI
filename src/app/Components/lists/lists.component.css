@@ -28,6 +28,17 @@ h2 {
     margin: 8px;
     padding: 8px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons *{
+    padding: 4px;
+    color: var(--brown);
+}
+
+.icons a {
+    text-decoration: none;
 }
 
 .new-list-div {
@@ -38,3 +49,4 @@ h2 {
     width: 12rem;
     height: 3rem;
 }
+

@@ -9,5 +9,4 @@ export class TasksComponent {
 
   @Input() tasks:any
   
-
 }

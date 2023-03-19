@@ -1,0 +1,12 @@
+<div class="add-list">
+    <div class="add-list-container">
+        <form action="post" class="form-group">
+            <label for="email">Title</label>
+            <input #title type="text" id="title" class="form-control" required>
+
+            <div class="submitbtn">
+                <input (click)="add(title.value)" type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
