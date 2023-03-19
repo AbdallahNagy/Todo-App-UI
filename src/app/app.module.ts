@@ -8,12 +8,11 @@ import { AppComponent } from './app.component';
 import { MainComponent } from "./Components/main/main.component";
 import { ListsComponent } from './Components/lists/lists.component';
 import { TasksComponent } from './Components/tasks/tasks.component';
-import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 
 const root: Routes = [
-  {path: '', component:LoginComponent},
+  {path: 'home', component:MainComponent},
   {path: 'home', component:MainComponent},
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent}
@@ -25,7 +24,6 @@ const root: Routes = [
         MainComponent,
         ListsComponent,
         TasksComponent,
-        RegisterComponent,
         LoginComponent,
         SignupComponent
     ],
