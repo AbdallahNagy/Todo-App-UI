@@ -7,15 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+
   constructor( private router:Router) {
+    console.log('main');    
+    if(!localStorage.getItem('token')) this.router.navigate(['/signup']);
 
   }
   ngOnInit(): void {
-    if(!localStorage.getItem('token')) this.router.navigateByUrl('/signup');
   }
   tasks:any
-
-  
 
   getTasks(tasks:any) {
     this.tasks = tasks

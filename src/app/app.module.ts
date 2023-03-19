@@ -12,7 +12,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 
 const root: Routes = [
-  {path: 'home', component:MainComponent},
+  {path: '', component:MainComponent},
   {path: 'home', component:MainComponent},
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent}
