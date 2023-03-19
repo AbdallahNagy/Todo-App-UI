@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { HttpService } from 'src/app/Services/http.service';
+import { NewListComponent } from '../new-list/new-list.component';
 
 @Component({
   selector: 'app-lists',
@@ -9,12 +11,21 @@ import { HttpService } from 'src/app/Services/http.service';
 export class ListsComponent implements OnInit{
   lists: any
   token: string = localStorage.getItem('token')
+  modalRef: MdbModalRef<NewListComponent> | null = null;
 
   @Output() getTasksEvent = new EventEmitter()
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private modalService: MdbModalService) { }
   ngOnInit(): void {
     this.getLists()
+  }
+
+  openModal() {
+    this.modalRef = this.modalService.open(NewListComponent);
+    this.modalRef.onClose.subscribe((addedList: any) => {
+      console.log(addedList);
+      this.lists.push(addedList)
+    });
   }
 
   getLists() {

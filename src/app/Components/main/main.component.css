@@ -7,7 +7,7 @@
     place-self: center;
     display: flex;
     min-width: 80%;
-    height: 100%;
+    /* height: 100%; */
     background-color: var(--dark);
     border-radius: 10px;
     overflow: hidden;

@@ -1,6 +1,6 @@
 .add-list {
-    height: 100vh;
     display: grid;
+    background-color: var(--gray);
 }
 
 .add-list-container {
@@ -8,10 +8,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40%;
-    height: 50%;
+    width: 100%;
     border-radius: 10px;
     background-color: var(--gray);
+    padding: 16px;
 }
 
 form {

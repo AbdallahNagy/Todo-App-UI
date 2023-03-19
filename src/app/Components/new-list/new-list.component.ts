@@ -10,6 +10,7 @@ import { HttpService } from 'src/app/Services/http.service';
 })
 export class NewListComponent implements OnInit{
   token: string = localStorage.getItem('token');
+  addedList: object;
 
   constructor(
     private http: HttpService, 
@@ -25,12 +26,13 @@ export class NewListComponent implements OnInit{
     this.http.createNewList({ title }, this.token).subscribe({
       next: (res) => {
         console.log(res);
+        this.addedList = res;
         this._router.navigateByUrl('/home');
+        this.modalRef.close(res)
       },
       error: (err) => {
         console.log(err);
       },
     });
-    this.modalRef.close()
   }
 }

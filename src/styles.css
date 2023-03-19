@@ -27,4 +27,4 @@ html,
 body {
     background-color: var(--brown);
     color: var(--white);
-}@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+}
