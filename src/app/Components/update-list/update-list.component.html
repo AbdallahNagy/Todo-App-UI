@@ -1,11 +1,11 @@
-<div class="add-list">
-    <div class="add-list-container">
+<div class="update-list">
+    <div class="update-list-container">
         <form action="post" class="form-group">
             <label for="title">Title</label>
             <input #title type="text" id="title" class="form-control" required>
 
             <div class="submitbtn">
-                <input (click)="add(title.value)" type="submit" value="Add" class="btn btn-primary">
+                <input (click)="update(title.value)" type="submit" value="Update" class="btn btn-primary">
             </div>
         </form>
     </div>

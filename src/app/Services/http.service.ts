@@ -26,7 +26,6 @@ export class HttpService {
 
   getAllLists(token: string) {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
       authorization: token,
     });
     return this.http.get(this.baseURL + 'lists/', { headers });
@@ -34,7 +33,6 @@ export class HttpService {
 
   getTasksByListId(listId: any, token: string) {
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
       authorization: token,
     });
     return this.http.get(this.baseURL + `lists/${listId}`, { headers });
@@ -46,5 +44,28 @@ export class HttpService {
       authorization: token,
     });
     return this.http.post(this.baseURL + 'lists', list, { headers });
+  }
+
+  deleteListById(id: string, token: string) {
+    const headers = new HttpHeaders({
+      authorization: token,
+    });
+    return this.http.delete(this.baseURL + 'lists/' + id, { headers });
+  }
+
+  updateListById(id: string, list: object, token: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      authorization: token,
+    });
+    return this.http.patch(this.baseURL + 'lists/' + id, list, { headers });
+  }
+
+  addTodoToList(id: string, todo: object, token: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      authorization: token,
+    });
+    return this.http.post(this.baseURL + 'todos/' + id, todo, { headers });
   }
 }

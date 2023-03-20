@@ -14,6 +14,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { NewListComponent } from './Components/new-list/new-list.component';
 import { NewTodoComponent } from './Components/new-todo/new-todo.component';
+import { UpdateListComponent } from './Components/update-list/update-list.component';
+import { AddTodoToListComponent } from './Components/add-todo-to-list/add-todo-to-list.component';
 
 const root: Routes = [
   {path: '', component:MainComponent},
@@ -42,7 +44,9 @@ const root: Routes = [
         LoginComponent,
         SignupComponent,
         NewListComponent,
-        NewTodoComponent
+        NewTodoComponent,
+        UpdateListComponent,
+        AddTodoToListComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

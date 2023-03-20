@@ -18,8 +18,6 @@ export class NewListComponent implements OnInit{
     public modalRef: MdbModalRef<NewListComponent>) {}
     
   ngOnInit(): void {
-    console.log('comp');
-    
   }
 
   add(title: string) {
@@ -32,6 +30,7 @@ export class NewListComponent implements OnInit{
       },
       error: (err) => {
         console.log(err);
+        this.modalRef.close()
       },
     });
   }

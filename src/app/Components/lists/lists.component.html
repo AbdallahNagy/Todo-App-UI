@@ -6,17 +6,18 @@
     </div>
     <div class="list-groups-body">
         <ul *ngFor="let l of lists">
-            <li class="list-item" (click)="showTasks(l._id)">
+            <li class="list-item" (click)="showTodos(l._id)">
                 <span>{{l?.title}}</span>
                 <div class="icons">
-                    <a href="#"><i class="fa-solid fa-trash"></i></a>
-                    <a href="#"><i class="fa-solid fa-wrench"></i></a>
+                    <a href="#" (click)="deleteList(l._id)"><i class="fa-solid fa-trash"></i></a>
+                    <a href="#" (click)="openModalUpdateList(l._id)"><i class="fa-solid fa-wrench"></i></a>
+                    <a href="#" (click)="openModalAddTodo(l._id)"><i>+</i></a>
                 </div>
             </li>
         </ul>
     </div>
     
     <div class="new-list-div">
-        <button type="button" class="btn new-list-btn" (click)="openModal()">New List</button>
+        <button type="button" class="btn new-list-btn" (click)="openModalNewList()">New List</button>
     </div>
 </div>
