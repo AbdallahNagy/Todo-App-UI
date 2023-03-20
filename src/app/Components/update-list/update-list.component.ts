@@ -9,7 +9,6 @@ import { HttpService } from 'src/app/Services/http.service';
 })
 export class UpdateListComponent {
   token: string = localStorage.getItem('token');
-  updatedList: object;
   id: string;
 
   constructor(
@@ -27,7 +26,6 @@ export class UpdateListComponent {
     this.http.updateListById(this.id, { title }, this.token).subscribe({
       next: (res) => {
         console.log("res", res);
-        this.updatedList = res;
         this.modalRef.close(res);
       },
       error: (err) => {

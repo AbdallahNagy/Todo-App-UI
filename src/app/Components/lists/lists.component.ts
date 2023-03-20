@@ -29,6 +29,7 @@ export class ListsComponent implements OnInit {
     private http: HttpService,
     private modalService: MdbModalService
   ) {}
+  
   ngOnInit(): void {
     this.getLists();
   }

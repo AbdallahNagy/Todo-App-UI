@@ -1,1 +1,18 @@
-<p>new-todo works!</p>
+<div class="add-todo">
+    <div class="add-todo-container">
+        <form action="post" class="form-group">
+            <label for="title">Title</label>
+            <input #title type="text" id="title" class="form-control" required>
+
+            <select #status name="status" id="status">
+                <option value="todo">todo</option>
+                <option value="in-progress">in progress</option>
+                <option value="done">done</option>
+            </select>
+
+            <div class="submitbtn">
+                <input (click)="add(title.value, status.value)" type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>

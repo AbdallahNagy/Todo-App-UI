@@ -16,14 +16,11 @@ export class AddTodoToListComponent {
     public modalRef: MdbModalRef<AddTodoToListComponent>
   ) {}
 
-  ngOnInit(): void {}
-
   add(title: string, status: string) {
     this.http
       .addTodoToList(this.listId, { title, status }, this.token)
       .subscribe({
         next: (res) => {
-          console.log(res);
           this.modalRef.close(res);
         },
         error: (err) => {

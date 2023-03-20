@@ -1,9 +1,9 @@
-.add-todo {
+.update-todo {
     display: grid;
     background-color: var(--gray);
 }
 
-.add-todo-container {
+.update-todo-container {
     place-self: center;
     display: flex;
     justify-content: center;

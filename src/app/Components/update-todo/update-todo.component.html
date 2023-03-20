@@ -1,5 +1,5 @@
-<div class="add-todo">
-    <div class="add-todo-container">
+<div class="update-todo">
+    <div class="update-todo-container">
         <form action="post" class="form-group">
             <label for="title">Title</label>
             <input #title type="text" id="title" class="form-control" required>
@@ -11,7 +11,7 @@
             </select>
 
             <div class="submitbtn">
-                <input (click)="add(title.value, status.value)" type="submit" value="Add" class="btn btn-primary">
+                <input (click)="update(title.value, status.value)" type="submit" value="Update" class="btn btn-primary">
             </div>
         </form>
     </div>

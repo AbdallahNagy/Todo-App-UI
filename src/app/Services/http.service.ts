@@ -68,4 +68,41 @@ export class HttpService {
     });
     return this.http.post(this.baseURL + 'todos/' + id, todo, { headers });
   }
+
+  getAllTodos(token: string) {
+    const headers = new HttpHeaders({
+      authorization: token,
+    });
+    return this.http.get(this.baseURL + 'todos', { headers });
+  }
+
+  deleteTodo(id: string, token: string) {
+    const headers = new HttpHeaders({
+      authorization: token,
+    });
+    return this.http.delete(this.baseURL + 'todos/' + id, { headers });
+  }
+
+  updateTodoById(id: string, todo: object, token: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      authorization: token,
+    });
+    return this.http.patch(this.baseURL + 'todos/' + id, todo, { headers });
+  }
+
+  getTodoById(id: string, token: string) {
+    const headers = new HttpHeaders({
+      authorization: token,
+    });
+    return this.http.get(this.baseURL + 'todos/' + id, { headers });
+  }
+
+  addTodoWithoutList(todo: object, token: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      authorization: token,
+    });
+    return this.http.post(this.baseURL + 'todos/', todo, { headers });
+  }
 }

@@ -1,15 +1,20 @@
 <div class="container">
-    <h2>Tasks</h2>
     <div class="tasks">
-        <ul *ngFor="let t of tasks">
+        <h2>Tasks</h2>
+        <ul *ngFor="let t of todos">
 
             <li class="task-item">
                 <span>{{t.title}}</span>
+                <span>{{t.status}}</span>
                 <div class="icons">
-                    <a href="#"><i class="fa-solid fa-trash"></i></a>
-                    <a href="#"><i class="fa-solid fa-wrench"></i></a>
+                    <a href="#" (click)="deleteTodo(t._id)"><i class="fa-solid fa-trash"></i></a>
+                    <a href="#" (click)="openModalToUpdateTodo(t._id)"><i class="fa-solid fa-wrench"></i></a>
                 </div>
             </li>
         </ul>
+    </div>
+    <div class="all-todos-div">
+        <button type="button" class="btn todo-btn" (click)="showAllTodos()">All Todos</button>
+        <button type="button" class="btn todo-btn" (click)="openModalToAddTodo()">Todo Without List</button>
     </div>
 </div>
