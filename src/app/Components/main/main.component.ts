@@ -10,9 +10,9 @@ export class MainComponent implements OnInit {
   tasks:any
 
   constructor( private router:Router) {
-    console.log('main');    
+    // if user doesn't have token redirect him to signup
     if(!localStorage.getItem('token')) this.router.navigate(['/signup']);
-
+    
   }
   ngOnInit(): void {
   }
