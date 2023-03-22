@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { HttpService } from 'src/app/Services/http.service';
+import { NotificationService } from 'src/app/Services/notification.service';
 
 @Component({
   selector: 'app-add-todo-to-list',
@@ -13,12 +14,16 @@ export class AddTodoToListComponent {
 
   constructor(
     private http: HttpService,
-    public modalRef: MdbModalRef<AddTodoToListComponent>
+    public modalRef: MdbModalRef<AddTodoToListComponent>,
+    private notify: NotificationService
   ) {}
 
-  add(title: string, status: string) {
+  add(title: string, status: string, due: string) {
+    const dateDue = this.notify.prepareDueDate(due);
+    this.notify.sendNotification(title, dateDue);
+
     this.http
-      .addTodoToList(this.listId, { title, status }, this.token)
+      .addTodoToList(this.listId, { title, status , dateDue}, this.token)
       .subscribe({
         next: (res) => {
           this.modalRef.close(res);

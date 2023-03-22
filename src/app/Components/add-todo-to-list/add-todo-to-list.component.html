@@ -10,8 +10,11 @@
                 <option value="done">done</option>
             </select>
 
+            <label for="due">due date [hh:mm]</label>
+            <input #due type="time" id="due" class="form-control">
+
             <div class="submitbtn">
-                <input (click)="add(title.value, status.value)" type="submit" value="Add" class="btn btn-primary">
+                <input (click)="add(title.value, status.value, due.value)" type="submit" value="Add" class="btn btn-primary">
             </div>
         </form>
     </div>
