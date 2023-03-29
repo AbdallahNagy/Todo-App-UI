@@ -1,20 +1,48 @@
 <div class="container">
-    <div class="tasks">
-        <h2>Tasks</h2>
-        <ul *ngFor="let t of todos">
+  <div class="tasks">
+    <h2>Tasks</h2>
+    <ul *ngFor="let t of todos">
+      <li class="task-item">
+        <span>{{ t.title }}</span>
+        <!-- <span>{{t.status}}</span> -->
 
-            <li class="task-item">
-                <span>{{t.title}}</span>
-                <span>{{t.status}}</span>
-                <div class="icons">
-                    <a href="#" (click)="deleteTodo(t._id)"><i class="fa-solid fa-trash"></i></a>
-                    <a href="#" (click)="openModalToUpdateTodo(t._id)"><i class="fa-solid fa-wrench"></i></a>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="all-todos-div">
-        <button type="button" class="btn todo-btn" (click)="showAllTodos()">All Todos</button>
-        <button type="button" class="btn todo-btn" (click)="openModalToAddTodo()">Todo Without List</button>
-    </div>
+        <!-- drop down -->
+        <!-- <div class="dropdown">
+          <button
+            class="btn"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="true"
+          >
+            Drop
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div> -->
+
+        <div class="icons">
+          <a href="#" (click)="deleteTodo(t._id)"
+            ><i class="fa-solid fa-trash"></i
+          ></a>
+          <a href="#" (click)="openModalToUpdateTodo(t._id)"
+            ><i class="fa-solid fa-wrench"></i
+          ></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="all-todos-div">
+    <button type="button" class="btn todo-btn" (click)="showAllTodos()">
+      All Todos
+    </button>
+    <button type="button" class="btn todo-btn" (click)="openModalToAddTodo()">
+      Todo Without List
+    </button>
+  </div>
 </div>
+

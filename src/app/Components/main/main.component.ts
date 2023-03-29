@@ -13,6 +13,7 @@ export class MainComponent implements OnInit {
     // if user doesn't have token redirect him to signup
     if(!localStorage.getItem('token')) this.router.navigate(['/signup']);
     
+    // check for every todo if their time due or not
   }
   ngOnInit(): void {
   }

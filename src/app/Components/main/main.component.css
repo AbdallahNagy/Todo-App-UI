@@ -1,13 +1,12 @@
 .main {
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .main-container {
     place-self: center;
     display: flex;
     min-width: 80%;
-    /* height: 100%; */
     background-color: var(--dark);
     border-radius: 10px;
     overflow: hidden;

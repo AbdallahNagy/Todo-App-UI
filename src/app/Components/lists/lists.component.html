@@ -9,9 +9,9 @@
             <li class="list-item" (click)="showTodos(l._id)">
                 <span>{{l?.title}}</span>
                 <div class="icons">
-                    <a href="#" (click)="deleteList(l._id)"><i class="fa-solid fa-trash"></i></a>
-                    <a href="#" (click)="openModalUpdateList(l._id)"><i class="fa-solid fa-wrench"></i></a>
-                    <a href="#" (click)="openModalAddTodo(l._id)"><i class="fa-solid fa-plus"></i></a>
+                    <a href="#" (click)="deleteList(l._id)"><i class="fa-solid fa-trash"  title="delete list"></i></a>
+                    <a href="#" (click)="openModalUpdateList(l._id)"><i class="fa-solid fa-wrench" title="edit list"></i></a>
+                    <a href="#" (click)="openModalAddTodo(l._id)"><i class="fa-solid fa-plus" title="add todo"></i></a>
                 </div>
             </li>
         </ul>
